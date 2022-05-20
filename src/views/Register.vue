@@ -36,7 +36,6 @@
             >
               Sign Up
             </button>
-            {{ isSubmitting }}
           </form>
         </div>
       </div>
@@ -55,7 +54,14 @@ export default {
   methods: {
     onSubmit() {
       console.log("Submitted form...");
-      this.$store.dispatch("register");
+      this.$store.dispatch("register", {
+        email: 'ejkwq@af.com',
+        username: 'Adiauo',
+        password: '12345678'
+      })
+      .then(result => {
+        console.log('Succesfully register user', result)
+      })
     },
   },
 };
