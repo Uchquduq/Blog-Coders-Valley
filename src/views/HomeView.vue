@@ -1,17 +1,11 @@
 <template>
-  <div class="home">
-    <router-view></router-view>
-  </div>
+  <div class="home">Home</div>
 </template>
 
 <script>
 // @ is an alias to /src
 
-
 export default {
-  name: 'HomeView',
-  components: {
-    
-  }
-}
+  name: "HomeView",
+};
 </script>

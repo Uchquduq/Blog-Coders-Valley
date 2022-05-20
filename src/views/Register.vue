@@ -7,7 +7,7 @@
           <p class="text-xs-center">
             <router-link :to="{ name: 'login' }">Need an account?</router-link>
           </p>
-          VALIDATION ERRORS
+          <p>VALIDATION ERRORS</p>
           <form @submit.prevent="onSubmit">
             <fieldset class="form-group">
               <input
@@ -30,7 +30,13 @@
                 placeholder="Password"
               />
             </fieldset>
-            <button class="btn btn-lg btn-primary pull-xs-right">Sign Up</button>
+            <button
+              :disabled="isSubmitting"
+              class="btn btn-lg btn-primary pull-xs-right"
+            >
+              Sign Up
+            </button>
+            {{ isSubmitting }}
           </form>
         </div>
       </div>
@@ -41,9 +47,18 @@
 <script>
 export default {
   name: "McvRegister",
+  computed: {
+    isSubmitting() {
+      return this.$store.state.auth.isSubmitting;
+    },
+  },
   methods: {
     onSubmit() {
       console.log("Submitted form...");
+      this.$store.commit("registerStart");
+    },
+    incremerse() {
+      this.$store.commit("increment");
     },
   },
 };

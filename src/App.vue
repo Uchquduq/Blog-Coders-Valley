@@ -1,5 +1,5 @@
 <template>
-  <div>Medium Clone
+  <div>
     <router-view></router-view>
   </div>
   
