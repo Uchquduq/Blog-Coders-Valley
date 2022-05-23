@@ -34,7 +34,7 @@
             </router-link>
           </li>
         </template>
-        <template v-if="!isAnonymous">
+        <template v-if="isAnonymous">
           <li class="nav-item">
             <router-link class="nav-link" :to="{ name: 'login' }" active-class="active">
               Sign in
