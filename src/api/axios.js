@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {getItem} from '@/helpers/persistanceStorage' 
+import { getItem } from '@/helpers/persistanceStorage'
 
 axios.defaults.baseURL = 'https://conduit.productionready.io/api'
 
