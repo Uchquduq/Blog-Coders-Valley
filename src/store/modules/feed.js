@@ -39,6 +39,7 @@ const actions = {
       .then(response => {
         context.commit(mutationTypes.getFeedSuccess, response.data)
         resolve(response.data)
+        console.log(response.data)
       })
       .catch(() => {
         context.commit(mutationTypes.getFeedFailure)
