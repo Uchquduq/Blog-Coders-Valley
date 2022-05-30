@@ -44,7 +44,7 @@
           <div>
             <p>{{ article.body }}</p>
           </div>
-          TAGLIST
+          <mcv-tag-list :tags="article.tagList" />
         </div>
       </div>
     </div>
@@ -56,12 +56,14 @@ import McvErrorMessage from "@/components/ErrorMessage";
 import { actionTypes as articleActionTypes } from "@/store/modules/article";
 import { getterTypes as authGetterTypes } from "@/store/modules/auth";
 import { mapState, mapGetters } from "vuex";
+import McvTagList from "@/components/TagList";
 
 export default {
   name: "McvArticle",
   components: {
     McvLoading,
     McvErrorMessage,
+    McvTagList,
   },
   computed: {
     ...mapState({
@@ -91,7 +93,7 @@ export default {
           slug: this.$route.params.slug,
         })
         .then(() => {
-          this.$router.push({ name: "GlobalFeed" });
+          this.$router.push({ name: "globalFeed" });
         });
     },
   },

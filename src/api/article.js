@@ -5,7 +5,7 @@ const getArticle = slug => {
 }
 
 const deleteArticle = slug => {
-  return axios.delete(`/article/${slug}`)
+  return axios.delete(`/articles/${slug}`)
 }
 
 export default {
