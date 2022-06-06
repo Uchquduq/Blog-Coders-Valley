@@ -3,7 +3,7 @@
     <div class="container page">
       <div class="row">
         <div class="col-md-10 offset-md-1 col-xs-12">
-          <mcv-validation-errors v-if="errors" />
+          <mcv-validation-errors v-if="errors" :validation-errors="errors" />
           <form @submit.prevent="onSubmit">
             <fieldset>
               <fieldset class="form-group">
@@ -24,7 +24,6 @@
               </fieldset>
               <fieldset class="form-group">
                 <textarea
-                  type="text"
                   class="form-control form-control-lg"
                   placeholder="What is this article about?"
                   v-model="body"
@@ -42,7 +41,7 @@
                 <button
                   type="submit"
                   class="btn btn-lg pull-xs-right btn-primary"
-                  disable="isSubmitting"
+                  :disabled="isSubmitting"
                 >
                   Publish Article
                 </button>
@@ -54,34 +53,35 @@
     </div>
   </div>
 </template>
+
 <script>
-import McvValidationErrors from "@/components/ValidationErrors";
+import McvValidationErrors from '@/components/ValidationErrors'
 export default {
-  name: "McvArticleForm",
-  components: {
-    McvValidationErrors,
-  },
+  name: 'McvArticleForm',
   props: {
     initialValues: {
       type: Object,
-      required: true,
+      required: true
     },
     errors: {
       type: Object,
-      required: false,
+      required: false
     },
     isSubmitting: {
       type: Boolean,
-      required: true,
-    },
+      required: true
+    }
+  },
+  components: {
+    McvValidationErrors
   },
   data() {
     return {
-      title: "",
-      description: "",
-      body: "",
-      tagList: "",
-    };
+      title: '',
+      description: '',
+      body: '',
+      tagList: ''
+    }
   },
   methods: {
     onSubmit() {
@@ -89,11 +89,10 @@ export default {
         title: this.title,
         description: this.description,
         body: this.body,
-        tagList: this.tagList,
-      };
-      this.$emit("articleSubmit", form);
-    },
-  },
-};
+        tagList: this.tagList.split(' ')
+      }
+      this.$emit('articleSubmit', form)
+    }
+  }
+}
 </script>
-<style lang=""></style>
