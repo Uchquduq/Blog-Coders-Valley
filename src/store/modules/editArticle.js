@@ -61,7 +61,7 @@ const actions = {
         })
     })
   },
-  [actionTypes.getArticle](context, { slug, articleInput }) {
+  [actionTypes.getArticle](context, { slug }) {
     return new Promise(resolve => {
       context.commit(mutationTypes.getArticleStart)
       articleApi.getArticle(slug)
