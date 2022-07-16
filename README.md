@@ -1,5 +1,8 @@
 # app
 
+## Demo
+https://blogru.netlify.app
+
 ## Project setup
 ```
 npm install
