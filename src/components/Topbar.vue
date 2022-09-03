@@ -2,7 +2,7 @@
   <nav class="navbar-light navbar">
     <div class="container">
       <router-link class="navbar-brand" :to="{ name: 'globalFeed' }">
-        MediumClone
+        CodersBlog
       </router-link>
       <ul class="nav navbar-nav pull-xs-right">
         <li class="nav-item">

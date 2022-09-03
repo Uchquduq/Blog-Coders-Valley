@@ -7,8 +7,8 @@
             <img :src="userProfile.image" alt="" class="user-img" />
             <h4>{{ userProfile.username }}</h4>
             <p>{{ userProfile.bio }}</p>
+            <div>FOLLOW USER BUTTON</div>
             <div>
-              FOLLOW USER BUTTON
               <router-link
                 v-if="isCurrentUserProfile"
                 class="btn btn-sm btn-outline-secondary action-btn"
@@ -23,7 +23,7 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-md-12 offset-md-1">
+        <div class="col-xs-12 col-md-12">
           <div class="article-toggle">
             <ul class="nav nav-pills outline-active">
               <li class="nav-item">
@@ -56,7 +56,7 @@
               </li>
             </ul>
           </div>
-          <mcv-feed :api-url="apiUrl" />
+          <div class="container"><mcv-feed :api-url="apiUrl" /></div>
         </div>
       </div>
     </div>
