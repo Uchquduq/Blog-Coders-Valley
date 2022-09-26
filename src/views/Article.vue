@@ -2,7 +2,7 @@
   <div class="article-page">
     <div class="banner">
       <div class="container" v-if="article">
-        <h1>{{ article.title }}</h1>
+        <h1 class="h1" >{{ article.title }}</h1>
         <router-link
           :to="{
             name: 'userProfile',
@@ -27,9 +27,8 @@
             :to="{ name: 'editArticle', params: { slug: article.slug } }"
             class="btn btn-outline-secondary btn-sm"
           >
-            <i class="ion-edt" />
-            Edit article</router-link
-          >
+            <i class="ion-edt" />Edit article
+          </router-link>
           <button class="btn btn-outline-danger btn-sm" @click="deleteArticle">
             <i class="ion-trash-a" />Delete article
           </button>
@@ -99,4 +98,14 @@ export default {
   },
 };
 </script>
-<style lang=""></style>
+<style scoped>
+button {
+  margin: 10px;
+}
+.info {
+  margin-top: 20px;
+}
+.h1 {
+  margin-bottom: 20px;
+}
+</style>
